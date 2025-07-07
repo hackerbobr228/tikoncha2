@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tikoncha - O'quvchilar uchun raqamli himoya tizimi. Chalg'ituvchi ilovalarni bloklash va diqqatni oshirish.">
+    <meta name="keywords" content="tikoncha, raqamli himoya, o'quvchilar, bloklash, ta'lim, edtech">
+    <meta name="author" content="Tikoncha Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tikoncha - Raqamli Himoya Tizimi">
+    <meta property="og:description" content="Yosh avlodni raqamli chalg'ituvchilardan himoya qilamiz">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tikoncha.uz">
+    <meta property="og:image" content="https://tikoncha.uz/images/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tikoncha - Raqamli Himoya Tizimi">
+    <meta name="twitter:description" content="Yosh avlodni raqamli chalg'ituvchilardan himoya qilamiz">
+    <meta name="twitter:image" content="https://tikoncha.uz/images/twitter-card.jpg">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <title>Tikoncha - Raqamli Himoya / Цифровая Защита</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/images/tikoncha-main.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="/images/tikoncha-aboutus.svg" as="image" type="image/svg+xml">
+    
+    <style>
+        :root {
+            /* Light mode colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fffe;
+            --bg-card: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --accent-primary: #22c55e;
+            --accent-secondary: #16a34a;
+            --accent-tertiary: #dcfce7;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            --gradient-secondary: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+        }
+
+        [data-theme="dark"] {
+            /* Dark mode colors */
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --accent-primary: #22c55e;
+            --accent-secondary: #16a34a;
+            --accent-tertiary: #064e3b;
+            --border-color: #475569;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            --gradient-primary: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            --gradient-secondary: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+        }
+
+        /* Reset and Base Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-x: hidden;
+        }
+
+        /* Skip Link for Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--accent-primary);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 10000;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Utility Classes */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .focus-visible {
+            outline: 2px solid var(--accent-primary);
+            outline-offset: 2px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo:focus {
+            outline: 2px solid var(--accent-primary);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a:focus::after {
+            width: 80%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--accent-primary);
+            background-color: var(--accent-tertiary);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lang-toggle, .theme-toggle {
+            background: none;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lang-toggle:hover, .theme-toggle:hover,
+        .lang-toggle:focus, .theme-toggle:focus {
+            border-color: var(--accent-primary);
+            background-color: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            min-width: 44px;
+            min-height: 44px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu:hover,
+        .mobile-menu:focus {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--bg-card);
+            box-shadow: var(--shadow-lg);
+            border-radius: 0 0 12px 12px;
+            padding: 1rem;
+            z-index: 999;
+        }
+
+        .mobile-nav.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-nav .nav-links {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .mobile-nav .nav-links a {
+            padding: 1rem;
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-secondary);
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            min-width: 44px;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-primary);
+            border: 2px solid var(--accent-primary);
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background-color: var(--accent-primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            filter: drop-shadow(0 10px 30px rgba(34, 197, 94, 0.2));
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-secondary);
+            position: relative;
+        }
+
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 80%, rgba(34, 197, 94, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent-primary);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            position: relative;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background-color: var(--bg-card);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent-primary);
+            transform: scale(1.05);
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--accent-tertiary) 100%);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Популярный';
+            position: absolute;
+            top: 1rem;
+            right: -2rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 3rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            margin: 1.5rem 0;
+            line-height: 1;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .features-list .included {
+            color: var(--text-primary);
+        }
+
+        .features-list .not-included {
+            opacity: 0.5;
+        }
+
+        .features-list .check-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .features-list .included .check-icon {
+            background-color: var(--accent-primary);
+            color: white;
+        }
+
+        .features-list .not-included .check-icon {
+            background-color: var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        /* Team Section */
+        .team {
+            background-color: var(--bg-secondary);
+            position: relative;
+        }
+
+        .team::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(34, 197, 94, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-card {
+            background-color: var(--bg-card);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border-color);
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent-primary);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 4px solid var(--accent-primary);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .team-avatar::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .team-card:hover .team-avatar::before {
+            opacity: 1;
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover .team-avatar img {
+            transform: scale(1.1);
+        }
+
+        .team-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .team-role {
+            color: var(--accent-primary);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-bio {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-card {
+            background-color: var(--bg-card);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+
+        .about-card h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+        }
+
+        .about-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-card);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+            padding: 0.25rem 0;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .footer-section a:hover,
+        .footer-section a:focus {
+            color: var(--accent-primary);
+            padding-left: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 0;
+            padding: 0;
+        }
+
+        .social-links a:hover,
+        .social-links a:focus {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            padding: 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        /* Mascot-specific styles */
+        .mascot-image {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 4px 12px rgba(34, 197, 94, 0.2));
+        }
+
+        .mascot-image:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 6px 20px rgba(34, 197, 94, 0.3));
+        }
+
+        /* Hero mascot animations */
+        .hero-mascot {
+            animation: float 4s ease-in-out infinite;
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-8px) rotate(1deg); }
+            50% { transform: translateY(-12px) rotate(0deg); }
+            75% { transform: translateY(-8px) rotate(-1deg); }
+        }
+
+        /* Logo mascot */
+        .logo-mascot {
+            width: 32px;
+            height: 32px;
+            margin-right: 8px;
+            vertical-align: middle;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo:hover .logo-mascot {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        /* About section mascot */
+        .about-mascot {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 2rem;
+            display: block;
+            animation: think 6s ease-in-out infinite;
+        }
+
+        @keyframes think {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-3deg) scale(1.02); }
+            50% { transform: rotate(0deg) scale(1.05); }
+            75% { transform: rotate(3deg) scale(1.02); }
+        }
+
+        /* Feature mascots */
+        .feature-mascot {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature-card:hover .feature-mascot {
+            transform: scale(1.15) rotate(8deg);
+        }
+
+        /* Loading States */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid var(--accent-primary);
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Error States */
+        .error {
+            color: #dc2626;
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        /* Success States */
+        .success {
+            color: #059669;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 24px;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero {
+                padding: 6rem 0 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .section-title {
+                font-size: 2.25rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .features-grid,
+            .team-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .hero {
+                padding: 5rem 0 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-mascot {
+                max-width: 280px;
+            }
+            
+            .about-mascot {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .team-avatar {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .logo-mascot {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+                --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+                --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            }
+            
+            .btn {
+                border: 2px solid currentColor;
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .hero-mascot {
+                animation: none;
+            }
+            
+            .about-mascot {
+                animation: none;
+            }
+        }
+
+        /* Dark mode mascot adjustments */
+        [data-theme="dark"] .mascot-image {
+            filter: drop-shadow(0 4px 12px rgba(34, 197, 94, 0.4)) brightness(1.1);
+        }
+
+        [data-theme="dark"] .mascot-image:hover {
+            filter: drop-shadow(0 6px 20px rgba(34, 197, 94, 0.5)) brightness(1.2);
+        }
+
+        /* Print styles */
+        @media print {
+            header {
+                position: static;
+                box-shadow: none;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .btn {
+                border: 2px solid var(--accent-primary);
+            }
+            
+            .mascot-image {
+                filter: none;
+            }
+        }
+    </style>
+</head>
+<body data-theme="light" data-lang="uz">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header role="banner">
+        <nav class="container" role="navigation" aria-label="Main navigation">
+            <a href="#home" class="logo" aria-label="Tikoncha home">
+                <img src="/images/tikoncha-main.svg" alt="" class="logo-mascot mascot-image" role="presentation">
+                Tikoncha
+            </a>
+            
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#home" class="nav-link" role="menuitem" data-uz="Bosh sahifa" data-ru="Главная">Bosh sahifa</a></li>
+                <li role="none"><a href="#features" class="nav-link" role="menuitem" data-uz="Imkoniyatlar" data-ru="Возможности">Imkoniyatlar</a></li>
+                <li role="none"><a href="#pricing" class="nav-link" role="menuitem" data-uz="Tariflar" data-ru="Тарифы">Tariflar</a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem" data-uz="Biz haqimizda" data-ru="О нас">Biz haqimizda</a></li>
+                <li role="none"><a href="#team" class="nav-link" role="menuitem" data-uz="Jamoa" data-ru="Команда">Jamoa</a></li>
+            </ul>
+
+            <div class="header-controls">
+                <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle language between Uzbek and Russian">
+                    <span data-uz="🇺🇿 UZ / 🇷🇺 RU" data-ru="🇷🇺 RU / 🇺🇿 UZ">🇺🇿 UZ / 🇷🇺 RU</span>
+                </button>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle between light and dark theme">
+                    <span class="theme-icon" aria-hidden="true">🌞</span>
+                    <span class="sr-only theme-text">Switch to dark mode</span>
+                </button>
+                <button class="mobile-menu" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span aria-hidden="true">☰</span>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="#home" class="nav-link" role="menuitem" data-uz="Bosh sahifa" data-ru="Главная">Bosh sahifa</a></li>
+                    <li role="none"><a href="#features" class="nav-link" role="menuitem" data-uz="Imkoniyatlar" data-ru="Возможности">Imkoniyatlar</a></li>
+                    <li role="none"><a href="#pricing" class="nav-link" role="menuitem" data-uz="Tariflar" data-ru="Тарифы">Tariflar</a></li>
+                    <li role="none"><a href="#about" class="nav-link" role="menuitem" data-uz="Biz haqimizda" data-ru="О нас">Biz haqimizda</a></li>
+                    <li role="none"><a href="#team" class="nav-link" role="menuitem" data-uz="Jamoa" data-ru="Команда">Jamoa</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero" role="banner">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-uz="Yosh avlodni raqamli chalg'ituvchilardan himoya qilamiz" data-ru="Мы защищаем молодое поколение от цифровых отвлекающих факторов">
+                        Yosh avlodni raqamli chalg'ituvchilardan himoya qilamiz
+                    </h1>
+                    <p class="hero-subtitle" data-uz="Tikoncha - bu o'quvchilar uchun maxsus ishlab chiqilgan raqamli himoya tizimi. Bizning platformamiz orqali bolalar diqqatini chalg'ituvchi ilovalar va saytlardan himoyalanadi." data-ru="Tikoncha - это система цифровой защиты, специально разработанная для учащихся. Наша платформа защищает детей от отвлекающих приложений и сайтов.">
+                        Tikoncha - bu o'quvchilar uchun maxsus ishlab chiqilgan raqamli himoya tizimi. Bizning platformamiz orqali bolalar diqqatini chalg'ituvchi ilovalar va saytlardan himoyalanadi.
+                    </p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#pricing" class="btn btn-primary cta-start" data-uz="Boshlash" data-ru="Начать">Boshlash</a>
+                        <a href="#features" class="btn btn-secondary cta-demo" data-uz="Demo ko'rish" data-ru="Смотреть демо">Demo ko'rish</a>
+                    </div>
+
+                    <img src="/images/tikoncha-main.svg" alt="Tikoncha hedgehog mascot representing digital protection for students" class="hero-mascot mascot-image" loading="eager">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title" data-uz="Imkoniyatlar" data-ru="Возможности">Imkoniyatlar</h2>
+                <p class="section-subtitle" data-uz="Tikoncha platformasining asosiy imkoniyatlari bilan tanishing" data-ru="Познакомьтесь с основными возможностями платформы Tikoncha">
+                    Tikoncha platformasining asosiy imkoniyatlari bilan tanishing
+                </p>
+                
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <img src="/images/tikoncha-main.svg" alt="Tikoncha mascot representing app blocking feature" class="feature-mascot mascot-image" loading="lazy">
+                        <h3 data-uz="Chalg'ituvchilarni bloklash" data-ru="Блокировка отвлекающих приложений">Chalg'ituvchilarni bloklash</h3>
+                        <p data-uz="Dars vaqtida ijtimoiy tarmoqlar va o'yinlarni avtomatik ravishda bloklaydi va o'quvchilarning diqqatini saqlaydi" data-ru="Автоматически блокирует социальные сети и игры во время уроков и сохраняет внимание учащихся">
+                            Dars vaqtida ijtimoiy tarmoqlar va o'yinlarni avtomatik ravishda bloklaydi va o'quvchilarning diqqatini saqlaydi
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <img src="/images/tikoncha-main.svg" alt="Tikoncha mascot representing focus enhancement feature" class="feature-mascot mascot-image" loading="lazy">
+                        <h3 data-uz="Diqqatni oshirish" data-ru="Повышение концентрации">Diqqatni oshirish</h3>
+                        <p data-uz="O'quvchilarning darsga e'tiborini jamlashga yordam beradi va ta'lim samaradorligini sezilarli darajada oshiradi" data-ru="Помогает учащимся сосредоточиться на уроке и значительно повышает эффективность обучения">
+                            O'quvchilarning darsga e'tiborini jamlashga yordam beradi va ta'lim samaradorligini sezilarli darajada oshiradi
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <img src="/images/tikoncha-main.svg" alt="Tikoncha mascot representing progress tracking feature" class="feature-mascot mascot-image" loading="lazy">
+                        <h3 data-uz="Rivojlanishni kuzatish" data-ru="Отслеживание развития">Rivojlanishni kuzatish</h3>
+                        <p data-uz="O'quvchilarning faoliyati va rivojlanishi haqida batafsil hisobotlar taqdim etadi va o'qituvchilarga yordam beradi" data-ru="Предоставляет подробные отчеты об активности и развитии учащихся и помогает учителям">
+                            O'quvchilarning faoliyati va rivojlanishi haqida batafsil hisobotlar taqdim etadi va o'qituvchilarga yordam beradi
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2 class="section-title" data-uz="Tariflar" data-ru="Тарифы">Tariflar</h2>
+                <p class="section-subtitle" data-uz="O'zingizga mos tarifni tanlang va bugun boshlang" data-ru="Выберите подходящий тариф и начните сегодня">
+                    O'zingizga mos tarifni tanlang va bugun boshlang
+                </p>
+                
+                <div class="pricing-grid">
+                    <article class="pricing-card">
+                        <h3 data-uz="Standart" data-ru="Стандарт">Standart</h3>
+                        <div class="price">
+                            $0
+                            <span class="price-period" data-uz="/oy" data-ru="/мес">/oy</span>
+                        </div>
+                        <ul class="features-list">
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="Asosiy bloklash funksiyasi" data-ru="Базовая функция блокировки">Asosiy bloklash funksiyasi</span>
+                            </li>
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="5 ta qurilma uchun" data-ru="Для 5 устройств">5 ta qurilma uchun</span>
+                            </li>
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="Asosiy hisobotlar" data-ru="Базовые отчеты">Asosiy hisobotlar</span>
+                            </li>
+                            <li class="not-included">
+                                <span class="check-icon" aria-hidden="true">✗</span>
+                                <span data-uz="Batafsil tahlillar" data-ru="Подробная аналитика">Batafsil tahlillar</span>
+                            </li>
+                            <li class="not-included">
+                                <span class="check-icon" aria-hidden="true">✗</span>
+                                <span data-uz="24/7 qo'llab-quvvatlash" data-ru="Поддержка 24/7">24/7 qo'llab-quvvatlash</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary" data-uz="Tanlash" data-ru="Выбрать">Tanlash</a>
+                    </article>
+
+                    <article class="pricing-card featured">
+                        <h3 data-uz="Professional" data-ru="Профессиональный">Professional</h3>
+                        <div class="price">
+                            $9
+                            <span class="price-period" data-uz="/oy" data-ru="/мес">/oy</span>
+                        </div>
+                        <ul class="features-list">
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="Kengaytirilgan bloklash" data-ru="Расширенная блокировка">Kengaytirilgan bloklash</span>
+                            </li>
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="Cheksiz qurilmalar" data-ru="Неограниченные устройства">Cheksiz qurilmalar</span>
+                            </li>
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="Batafsil hisobotlar va tahlillar" data-ru="Подробные отчеты и аналитика">Batafsil hisobotlar va tahlillar</span>
+                            </li>
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="Shaxsiy sozlamalar" data-ru="Персональные настройки">Shaxsiy sozlamalar</span>
+                            </li>
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="24/7 qo'llab-quvvatlash" data-ru="Поддержка 24/7">24/7 qo'llab-quvvatlash</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn btn-primary" data-uz="Tanlash" data-ru="Выбрать">Tanlash</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title" data-uz="Biz haqimizda" data-ru="О нас">Biz haqimizda</h2>
+                
+                <div class="about-grid">
+                    <article class="about-card">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <img src="/images/tikoncha-aboutus.svg" alt="Thoughtful Tikoncha hedgehog mascot representing our mission and values" class="about-mascot mascot-image" loading="lazy">
+                        </div>
+                        <h3 data-uz="Bizning maqsadimiz" data-ru="Наша цель">Bizning maqsadimiz</h3>
+                        <p data-uz="Biz zamonaviy ta'lim tizimida raqamli texnologiyalarning salbiy ta'sirini kamaytirish va o'quvchilarning diqqatini darsga qaratishga yordam berish maqsadida ishlaymiz. Tikoncha orqali biz har bir bolaning ta'lim olish huquqini himoya qilamiz va ularning kelajagini yaxshiroq qilishga harakat qilamiz." data-ru="Мы работаем с целью снижения негативного влияния ци��ровых технологий в современной системе образования и помощи учащимся сосредоточиться на уроках. Через Tikoncha мы защищаем право каждого ребенка на образование и стремимся сделать их будущее лучше.">
+                            Biz zamonaviy ta'lim tizimida raqamli texnologiyalarning salbiy ta'sirini kamaytirish va o'quvchilarning diqqatini darsga qaratishga yordam berish maqsadida ishlaymiz. Tikoncha orqali biz har bir bolaning ta'lim olish huquqini himoya qilamiz va ularning kelajagini yaxshiroq qilishga harakat qilamiz.
+                        </p>
+                    </article>
+
+                    <article class="about-card">
+                        <h3 data-uz="Biz kimmiz" data-ru="Кто мы">Biz kimmiz</h3>
+                        <p data-uz="Bizning jamoamiz tajribali pedagog, dasturchi va psixologlardan iborat. Biz bolalar psixologiyasi va zamonaviy texnologiyalar sohasidagi bilimlarimizni birlashtirib, eng samarali va xavfsiz yechimni yaratdik. Har birimiz ta'lim sohasida ko'p yillik tajribaga ega bo'lib, bolalarning raqamli muhitdagi xavfsizligini ta'minlashga bag'ishlanganmiz." data-ru="Наша команда состоит из опытных педагогов, программистов и психологов. Мы объединили наши знания в области детской психологии и современных технологий, чтобы создать наиболее эффективное и безопасное решение. Каждый из нас имеет многолетний опыт в сфере образования и посвящен обеспечению безопасности детей в цифровой среде.">
+                            Bizning jamoamiz tajribali pedagog, dasturchi va psixologlardan iborat. Biz bolalar psixologiyasi va zamonaviy texnologiyalar sohasidagi bilimlarimizni birlashtirib, eng samarali va xavfsiz yechimni yaratdik. Har birimiz ta'lim sohasida ko'p yillik tajribaga ega bo'lib, bolalarning raqamli muhitdagi xavfsizligini ta'minlashga bag'ishlanganmiz.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team">
+            <div class="container">
+                <h2 class="section-title" data-uz="Bizning jamoamiz" data-ru="Наша команда">Bizning jamoamiz</h2>
+                <p class="section-subtitle" data-uz="Tikoncha ortidagi professional jamoa bilan tanishing" data-ru="Познакомьтесь с профессиональной командой Tikoncha">
+                    Tikoncha ortidagi professional jamoa bilan tanishing
+                </p>
+                
+                <div class="team-grid">
+                    <article class="team-card">
+                        <div class="team-avatar">
+                            <img src="/images/tikoncha-team.png" alt="Tikoncha team mascot representing Saidbuxron Shuxratov" class="mascot-image" loading="lazy">
+                        </div>
+                        <h3>Saidbuxron Shuxratov</h3>
+                        <div class="team-role" data-uz="Bosh ijrochi direktor" data-ru="Генеральный директор">Bosh ijrochi direktor</div>
+                        <p class="team-bio" data-uz="10 yillik ta'lim sohasidagi tajriba. MIT da o'qigan va bir nechta EdTech loyihalarini muvaffaqiyatli boshqargan. Bolalar ta'limi va texnologiya integratsiyasi bo'yicha ekspert." data-ru="10-летний опыт в сфере образования. Выпускник MIT, успешно руководил несколькими EdTech проектами. Эксперт по детскому образованию и интеграции технологий.">
+                            10 yillik ta'lim sohasidagi tajriba. MIT da o'qigan va bir nechta EdTech loyihalarini muvaffaqiyatli boshqargan. Bolalar ta'limi va texnologiya integratsiyasi bo'yicha ekspert.
+                        </p>
+                    </article>
+
+                    <article class="team-card">
+                        <div class="team-avatar">
+                            <img src="/images/tikoncha-team.png" alt="Tikoncha team mascot representing Muhammadsaid Masaitov" class="mascot-image" loading="lazy">
+                        </div>
+                        <h3>Muhammadsaid Masaitov</h3>
+                        <div class="team-role" data-uz="UI/UX dizayner" data-ru="UI/UX дизайнер">UI/UX dizayner</div>
+                        <p class="team-bio" data-uz="Bolalar uchun foydalanuvchi interfeyslari yaratish bo'yicha mutaxassis. 7 yillik dizayn tajribasi va bir nechta xalqaro mukofotlar sohibi. Foydalanuvchi tajribasi va dostona dizayn bo'yicha ekspert." data-ru="Специалист по созданию пользовательских интерфейсов для детей. 7-летний опыт в дизайне и обладатель нескольких международных наград. Эксперт по пользовательскому опыту и дружелюбному дизайну.">
+                            Bolalar uchun foydalanuvchi interfeyslari yaratish bo'yicha mutaxassis. 7 yillik dizayn tajribasi va bir nechta xalqaro mukofotlar sohibi. Foydalanuvchi tajribasi va dostona dizayn bo'yicha ekspert.
+                        </p>
+                    </article>
+
+                    <article class="team-card">
+                        <div class="team-avatar">
+                            <img src="/images/tikoncha-team.png" alt="Tikoncha team mascot representing Dilshoda Karimova" class="mascot-image" loading="lazy">
+                        </div>
+                        <h3>Dilshoda Karimova</h3>
+                        <div class="team-role" data-uz="Bolalar psixologi" data-ru="Детский психолог">Bolalar psixologi</div>
+                        <p class="team-bio" data-uz="Bolalar psixologiyasi bo'yicha PhD. Raqamli texnologiyalarning bolalar rivojlanishiga ta'siri bo'yicha tadqiqotchi. Bolalar xavfsizligi va raqamli salomatlik bo'yicha maslahatchi." data-ru="PhD в области детской психологии. Исследователь влияния цифровых технологий на развитие детей. Консультант по детской безопасности и цифровому здоровью.">
+                            Bolalar psixologiyasi bo'yicha PhD. Raqamli texnologiyalarning bolalar rivojlanishiga ta'siri bo'yicha tadqiqotchi. Bolalar xavfsizligi va raqamli salomatlik bo'yicha maslahatchi.
+                        </p>
+                    </article>
+
+                    <article class="team-card">
+                        <div class="team-avatar">
+                            <img src="/images/tikoncha-team.png" alt="Tikoncha team mascot representing Aziz Rahmonov" class="mascot-image" loading="lazy">
+                        </div>
+                        <h3>Aziz Rahmonov</h3>
+                        <div class="team-role" data-uz="Bosh dasturchi" data-ru="Главный разработчик">Bosh dasturchi</div>
+                        <p class="team-bio" data-uz="Full-stack dasturchi, xavfsizlik tizimlari bo'yicha mutaxassis. Google va Microsoft kompaniyalarida ishlagan tajribaga ega. Kiberxavfsizlik va ma'lumotlar himoyasi bo'yicha ekspert." data-ru="Full-stack разработчик, специалист по системам безопасности. Имеет опыт работы в Google и Microsoft. Эксперт по кибербезопасности и защите данных.">
+                            Full-stack dasturchi, xav fsizlik tizimlari bo'yicha mutaxassis. Google va Microsoft kompaniyalarida ishlagan tajribaga ega. Kiberxavfsizlik va ma'lumotlar himoyasi bo'yicha ekspert.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-uz="Aloqa" data-ru="Контакты">Aloqa</h4>
+                    <a href="https://t.me/newedu_uz" aria-label="Email us at info@tikoncha.uz">https://t.me/newedu_uz</a>
+                    <address data-uz="Toshkent, O'zbekiston" data-ru="Ташкент, Узбекистан">Toshkent, O'zbekiston</address>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-uz="Mahsulot" data-ru="Продукт">Mahsulot</h4>
+                    <a href="#features" data-uz="Imkoniyatlar" data-ru="Возможности">Imkoniyatlar</a>
+                    <a href="#pricing" data-uz="Tariflar" data-ru="Тарифы">Tariflar</a>
+                    <a href="#" data-uz="Qo'llab-quvvatlash" data-ru="Поддержка">Qo'llab-quvvatlash</a>
+                    <a href="#" data-uz="API hujjatlari" data-ru="API документация">API hujjatlari</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-uz="Kompaniya" data-ru="Компания">Kompaniya</h4>
+                    <a href="#about" data-uz="Biz haqimizda" data-ru="О нас">Biz haqimizda</a>
+                    <a href="#team" data-uz="Jamoa" data-ru="Команда">Jamoa</a>
+                    <a href="#" data-uz="Karyera" data-ru="Карьера">Karyera</a>
+                    <a href="#" data-uz="Yangiliklar" data-ru="Новости">Yangiliklar</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-uz="Huquqiy" data-ru="Правовая информация">Huquqiy</h4>
+                    <a href="./privacy.html" data-uz="Maxfiylik siyosati" data-ru="Политика конфиденциальности">Maxfiylik siyosati</a>
+                    <a href="./terms.html" data-uz="Foydalanish shartlari" data-ru="Условия использования">Foydalanish shartlari</a>
+                    
+                    <div class="social-links">
+                        <a href="#" title="Telegram" aria-label="Follow us on Telegram">📱</a>
+                        <a href="#" title="Instagram" aria-label="Follow us on Instagram">📷</a>
+                        <a href="#" title="Facebook" aria-label="Follow us on Facebook">📘</a>
+                        <a href="#" title="LinkedIn" aria-label="Follow us on LinkedIn">💼</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tikoncha. <span data-uz="Barcha huquqlar himoyalangan." data-ru="Все права защищены.">Barcha huquqlar himoyalangan.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Security: Input validation and sanitization
+        function sanitizeInput(input) {
+            const div = document.createElement('div');
+            div.textContent = input;
+            return div.innerHTML;
+        }
+
+        // Security: Rate limiting for API calls
+        const rateLimiter = {
+            calls: {},
+            isAllowed: function(key, maxCalls = 10, timeWindow = 60000) {
+                const now = Date.now();
+                if (!this.calls[key]) {
+                    this.calls[key] = [];
+                }
+                
+                // Remove old calls outside time window
+                this.calls[key] = this.calls[key].filter(time => now - time < timeWindow);
+                
+                if (this.calls[key].length >= maxCalls) {
+                    return false;
+                }
+                
+                this.calls[key].push(now);
+                return true;
+            }
+        };
+
+        // Enhanced Theme Toggle with error handling
+        function toggleTheme() {
+            try {
+                if (!rateLimiter.isAllowed('theme-toggle', 20, 10000)) {
+                    console.warn('Theme toggle rate limit exceeded');
+                    return;
+                }
+
+                const body = document.body;
+                const themeIcon = document.querySelector('.theme-icon');
+                const themeText = document.querySelector('.theme-text');
+                
+                if (!body || !themeIcon || !themeText) {
+                    throw new Error('Required theme elements not found');
+                }
+                
+                const currentTheme = body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                body.setAttribute('data-theme', newTheme);
+                themeIcon.textContent = newTheme === 'dark' ? '🌙' : '🌞';
+                themeText.textContent = newTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+                
+                // Secure storage with error handling
+                try {
+                    localStorage.setItem('tikoncha-theme', newTheme);
+                } catch (e) {
+                    console.warn('Could not save theme preference:', e);
+                }
+                
+                // Announce theme change for screen readers
+                announceToScreenReader(`Theme changed to ${newTheme} mode`);
+                
+            } catch (error) {
+                console.error('Error toggling theme:', error);
+                showNotification('Theme toggle failed', 'error');
+            }
+        }
+
+        // Enhanced Language Toggle with error handling
+        function toggleLanguage() {
+            try {
+                if (!rateLimiter.isAllowed('lang-toggle', 20, 10000)) {
+                    console.warn('Language toggle rate limit exceeded');
+                    return;
+                }
+
+                const body = document.body;
+                if (!body) {
+                    throw new Error('Body element not found');
+                }
+                
+                const currentLang = body.getAttribute('data-lang');
+                const newLang = currentLang === 'uz' ? 'ru' : 'uz';
+                
+                body.setAttribute('data-lang', newLang);
+                document.documentElement.setAttribute('lang', newLang);
+                
+                // Update all text elements with error handling
+                const elements = document.querySelectorAll('[data-uz][data-ru]');
+                elements.forEach(element => {
+                    try {
+                        const text = element.getAttribute(`data-${newLang}`);
+                        if (text) {
+                            element.textContent = text;
+                        }
+                    } catch (e) {
+                        console.warn('Error updating element text:', e);
+                    }
+                });
+                
+                // Secure storage with error handling
+                try {
+                    localStorage.setItem('tikoncha-language', newLang);
+                } catch (e) {
+                    console.warn('Could not save language preference:', e);
+                }
+                
+                // Announce language change for screen readers
+                const langName = newLang === 'uz' ? 'Uzbek' : 'Russian';
+                announceToScreenReader(`Language changed to ${langName}`);
+                
+            } catch (error) {
+                console.error('Error toggling language:', error);
+                showNotification('Language toggle failed', 'error');
+            }
+        }
+
+        // Enhanced Mobile Menu Toggle
+        function toggleMobileMenu() {
+            try {
+                const mobileNav = document.getElementById('mobile-nav');
+                const mobileMenuBtn = document.querySelector('.mobile-menu');
+                
+                if (!mobileNav || !mobileMenuBtn) {
+                    throw new Error('Mobile menu elements not found');
+                }
+                
+                const isActive = mobileNav.classList.contains('active');
+                
+                if (isActive) {
+                    mobileNav.classList.remove('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenuBtn.innerHTML = '<span aria-hidden="true">☰</span>';
+                } else {
+                    mobileNav.classList.add('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                    mobileMenuBtn.innerHTML = '<span aria-hidden="true">✕</span>';
+                }
+                
+                // Announce state change for screen readers
+                announceToScreenReader(`Mobile menu ${isActive ? 'closed' : 'opened'}`);
+                
+            } catch (error) {
+                console.error('Error toggling mobile menu:', error);
+            }
+        }
+
+        // Accessibility: Screen reader announcements
+        function announceToScreenReader(message) {
+            const announcement = document.createElement('div');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.setAttribute('aria-atomic', 'true');
+            announcement.className = 'sr-only';
+            announcement.textContent = message;
+            
+            document.body.appendChild(announcement);
+            
+            setTimeout(() => {
+                document.body.removeChild(announcement);
+            }, 1000);
+        }
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            notification.setAttribute('role', 'alert');
+            
+            const style = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                color: white;
+                font-weight: 500;
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            const bgColor = type === 'error' ? '#dc2626' : type === 'success' ? '#059669' : '#3b82f6';
+            notification.style.cssText = style + `background-color: ${bgColor};`;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        document.body.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // Enhanced smooth scrolling with error handling
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    try {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const target = document.querySelector(targetId);
+                        
+                        if (target) {
+                            // Close mobile menu if open
+                            const mobileNav = document.getElementById('mobile-nav');
+                            if (mobileNav && mobileNav.classList.contains('active')) {
+                                toggleMobileMenu();
+                            }
+                            
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                            
+                            // Update focus for accessibility
+                            target.setAttribute('tabindex', '-1');
+                            target.focus();
+                            
+                        } else {
+                            console.warn(`Target element ${targetId} not found`);
+                        }
+                    } catch (error) {
+                        console.error('Error in smooth scrolling:', error);
+                    }
+                });
+            });
+        }
+
+        // Enhanced initialization with error handling
+        function initializeApp() {
+            try {
+                // Load saved preferences with fallbacks
+                const savedTheme = localStorage.getItem('tikoncha-theme') || 'light';
+                const savedLang = localStorage.getItem('tikoncha-language') || 'uz';
+                
+                const body = document.body;
+                const themeIcon = document.querySelector('.theme-icon');
+                const themeText = document.querySelector('.theme-text');
+                
+                if (body && themeIcon && themeText) {
+                    body.setAttribute('data-theme', savedTheme);
+                    document.documentElement.setAttribute('lang', savedLang);
+                    themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '🌞';
+                    themeText.textContent = savedTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+                }
+                
+                // Apply saved language
+                if (savedLang === 'ru') {
+                    body.setAttribute('data-lang', 'ru');
+                    const elements = document.querySelectorAll('[data-uz][data-ru]');
+                    elements.forEach(element => {
+                        try {
+                            const text = element.getAttribute('data-ru');
+                            if (text) {
+                                element.textContent = text;
+                            }
+                        } catch (e) {
+                            console.warn('Error applying saved language:', e);
+                        }
+                    });
+                }
+                
+                // Initialize smooth scrolling
+                initSmoothScrolling();
+                
+                // Initialize intersection observer for animations
+                initIntersectionObserver();
+                
+                // Initialize keyboard navigation
+                initKeyboardNavigation();
+                
+                // Initialize form validation if forms exist
+                initFormValidation();
+                
+                console.log('Tikoncha app initialized successfully');
+                
+            } catch (error) {
+                console.error('Error initializing app:', error);
+                showNotification('App initialization failed', 'error');
+            }
+        }
+
+        // Intersection Observer for animations
+        function initIntersectionObserver() {
+            try {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+
+                // Observe mascot images and cards
+                const elementsToObserve = document.querySelectorAll('.mascot-image, .feature-card, .team-card, .about-card, .pricing-card');
+                elementsToObserve.forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(el);
+                });
+                
+            } catch (error) {
+                console.warn('Intersection Observer not supported or failed:', error);
+            }
+        }
+
+        // Keyboard navigation enhancement
+        function initKeyboardNavigation() {
+            try {
+                // Enhanced focus management
+                document.addEventListener('keydown', function(e) {
+                    // Escape key closes mobile menu
+                    if (e.key === 'Escape') {
+                        const mobileNav = document.getElementById('mobile-nav');
+                        if (mobileNav && mobileNav.classList.contains('active')) {
+                            toggleMobileMenu();
+                        }
+                    }
+                    
+                    // Tab navigation enhancement
+                    if (e.key === 'Tab') {
+                        document.body.classList.add('keyboard-navigation');
+                    }
+                });
+                
+                // Remove keyboard navigation class on mouse use
+                document.addEventListener('mousedown', function() {
+                    document.body.classList.remove('keyboard-navigation');
+                });
+                
+            } catch (error) {
+                console.warn('Error initializing keyboard navigation:', error);
+            }
+        }
+
+        // Form validation (if forms are added later)
+        function initFormValidation() {
+            try {
+                const forms = document.querySelectorAll('form');
+                forms.forEach(form => {
+                    form.addEventListener('submit', function(e) {
+                        if (!validateForm(this)) {
+                            e.preventDefault();
+                            showNotification('Please correct the errors in the form', 'error');
+                        }
+                    });
+                });
+            } catch (error) {
+                console.warn('Error initializing form validation:', error);
+            }
+        }
+
+        // Form validation helper
+        function validateForm(form) {
+            let isValid = true;
+            const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+            
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.classList.add('error');
+                    isValid = false;
+                } else {
+                    input.classList.remove('error');
+                }
+            });
+            
+            return isValid;
+        }
+
+        // Header scroll effect with performance optimization
+        let ticking = false;
+        function updateHeader() {
+            const header = document.querySelector('header');
+            if (header) {
+                if (window.scrollY > 100) {
+                    header.style.backgroundColor = 'var(--bg-card)';
+                    header.style.backdropFilter = 'blur(10px)';
+                } else {
+                    header.style.backgroundColor = 'var(--bg-card)';
+                    header.style.backdropFilter = 'blur(10px)';
+                }
+            }
+            ticking = false;
+        }
+
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
+        }
+
+        // Event listeners with error handling
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                initializeApp();
+                
+                // Add scroll listener
+                window.addEventListener('scroll', onScroll, { passive: true });
+                
+                // Add resize listener for responsive adjustments
+                window.addEventListener('resize', function() {
+                    // Close mobile menu on resize to desktop
+                    if (window.innerWidth > 768) {
+                        const mobileNav = document.getElementById('mobile-nav');
+                        if (mobileNav && mobileNav.classList.contains('active')) {
+                            toggleMobileMenu();
+                        }
+                    }
+                }, { passive: true });
+                
+                // Add error handling for unhandled promise rejections
+                window.addEventListener('unhandledrejection', function(event) {
+                    console.error('Unhandled promise rejection:', event.reason);
+                    event.preventDefault();
+                });
+                
+                // Add global error handler
+                window.addEventListener('error', function(event) {
+                    console.error('Global error:', event.error);
+                });
+                
+            } catch (error) {
+                console.error('Error in DOMContentLoaded:', error);
+            }
+        });
+
+        // Service Worker registration for PWA capabilities (optional)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    if (perfData) {
+                        console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+                    }
+                }, 0);
+            });
+        }
+
+        // Add CSS animations for notifications
+        const notificationStyles = document.createElement('style');
+        notificationStyles.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+            
+            .keyboard-navigation *:focus {
+                outline: 2px solid var(--accent-primary) !important;
+                outline-offset: 2px !important;
+            }
+        `;
+        document.head.appendChild(notificationStyles);
+
+        document.addEventListener("contextmenu", e => e.preventDefault());
+  document.addEventListener("keydown", e => {
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") ||
+      (e.ctrlKey && e.key.toLowerCase() === "u")
+    ) {
+      e.preventDefault();
+    }
+  });
+    </script>
+</body>
+</html>

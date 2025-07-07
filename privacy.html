@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maxfiylik siyosati | Политика конфиденциальности</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #222;
+      --accent-color: #2e7d32;
+      --card-bg: #f5f5f5;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --accent-color: #81c784;
+      --card-bg: #1e1e1e;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 1rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: var(--accent-color);
+    }
+
+    .lang-switch, .theme-switch {
+      display: inline-block;
+      margin: 0 1rem 1rem 0;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .switch-container {
+      text-align: right;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .switch-container {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+
+  <div class="switch-container">
+    <span class="lang-switch" onclick="switchLang()">🇺🇿 / 🇷🇺</span>
+    <span class="theme-switch" onclick="switchTheme()">🌞 / 🌙</span>
+  </div>
+
+  <div class="container" id="privacy-uz">
+    <h1>Maxfiylik siyosati</h1>
+    <p>
+      Biz foydalanuvchilarning shaxsiy ma'lumotlarini himoya qilishga sodiqmiz. Ushbu siyosat sizning ma'lumotlaringiz qanday to‘planishi, saqlanishi va ishlatilishini tushuntiradi.
+    </p>
+    <h2>Maʼlumotlarni yig‘ish</h2>
+    <p>
+      Biz quyidagi maʼlumotlarni to‘plashimiz mumkin: ismingiz, elektron pochta manzilingiz, joylashuvingiz va ilova foydalanish statistikasi.
+    </p>
+    <h2>Maʼlumotdan foydalanish</h2>
+    <p>
+      Ushbu maʼlumotlar faqat xizmatni yaxshilash va o‘quvchi faoliyatini tahlil qilish uchun ishlatiladi. Biz maʼlumotlarni uchinchi shaxslarga bermaymiz.
+    </p>
+    <h2>Xavfsizlik</h2>
+    <p>
+      Sizning maʼlumotlaringiz xavfsiz serverlarda saqlanadi va maxfiylikni saqlash uchun barcha zarur choralar ko‘riladi.
+    </p>
+    <p>Oxirgi yangilanish: 2025-yil 7-iyul</p>
+  </div>
+
+  <div class="container" id="privacy-ru" style="display: none;">
+    <h1>Политика конфиденциальности</h1>
+    <p>
+      Мы стремимся защищать личные данные наших пользователей. Эта политика объясняет, какие данные мы собираем, как мы их храним и используем.
+    </p>
+    <h2>Сбор информации</h2>
+    <p>
+      Мы можем собирать следующую информацию: ваше имя, электронную почту, местоположение и статистику использования приложения.
+    </p>
+    <h2>Использование информации</h2>
+    <p>
+      Все данные используются только для улучшения сервиса и анализа активности учащихся. Мы не передаём данные третьим лицам.
+    </p>
+    <h2>Безопасность</h2>
+    <p>
+      Ваши данные хранятся на защищённых серверах, и мы принимаем все меры для обеспечения конфиденциальности.
+    </p>
+    <p>Последнее обновление: 7 июля 2025 года</p>
+  </div>
+
+  <script>
+    function switchTheme() {
+      const current = document.body.getAttribute("data-theme");
+      document.body.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+    }
+
+    function switchLang() {
+      const uz = document.getElementById("privacy-uz");
+      const ru = document.getElementById("privacy-ru");
+      const isUzbekVisible = uz.style.display !== "none";
+      uz.style.display = isUzbekVisible ? "none" : "block";
+      ru.style.display = isUzbekVisible ? "block" : "none";
+    }
+  </script>
+</body>
+</html>
