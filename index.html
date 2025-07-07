@@ -130,6 +130,10 @@
   width: 100%;
   min-height: 200px; /* временно — для теста */
 }
+.mobile-nav .nav-links a {
+  color: var(--text-primary); /* или просто white для проверки */
+}
+
 
         /* Utility Classes */
         .sr-only {
@@ -313,15 +317,21 @@
         }
 
         .mobile-nav .nav-links {
+            display: flex;
             flex-direction: column;
             gap: 0.5rem;
         }
 
-        .mobile-nav .nav-links a {
-            padding: 1rem;
-            border-radius: 8px;
-            display: block;
-        }
+        .mobile-nav .nav-link {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  background-color: var(--bg-secondary); /* или просто #eee */
+  color: var(--text-primary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
         /* Hero Section */
         .hero {
@@ -1189,7 +1199,7 @@
 
             <div class="header-controls">
                 <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle language between Uzbek and Russian">
-                    <span data-uz="UZ / RU" data-ru="RU / UZ">UZ / RU</span>
+                    <span data-uz="RU" data-ru="UZ">RU</span>
                 </button>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle between light and dark theme">
                     <span class="theme-icon" aria-hidden="true">🌞</span>
@@ -1971,13 +1981,13 @@
 
         document.addEventListener("contextmenu", e => e.preventDefault());
   document.addEventListener("keydown", e => {
-    if (
+ /*   if (
       e.key === "F12" ||
       (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") ||
       (e.ctrlKey && e.key.toLowerCase() === "u")
     ) {
       e.preventDefault();
-    }
+    } */
   });
     </script>
 </body>
