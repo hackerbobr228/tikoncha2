@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/features.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/pricing.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/team.css">
+</head>
+<body data-theme="dark" data-lang="uz">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header role="banner">
+        <nav class="container" role="navigation" aria-label="Main navigation">
+            <a href="#home" class="logo" aria-label="Tikoncha home">
+                <img src="/images/tikoncha-main.svg" alt="" class="logo-mascot mascot-image" role="presentation">
+                Tikoncha
+            </a>
+            
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#home" class="nav-link" role="menuitem" data-uz="Bosh sahifa" data-ru="Главная">Bosh sahifa</a></li>
+                <li role="none"><a href="#features" class="nav-link" role="menuitem" data-uz="Imkoniyatlar" data-ru="Возможности">Imkoniyatlar</a></li>
+                <li role="none"><a href="#pricing" class="nav-link" role="menuitem" data-uz="Tariflar" data-ru="Тарифы">Tariflar</a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem" data-uz="Biz haqimizda" data-ru="О нас">Biz haqimizda</a></li>
+                <li role="none"><a href="#team" class="nav-link" role="menuitem" data-uz="Jamoa" data-ru="Команда">Jamoa</a></li>
+            </ul>
+
+            <div class="header-controls">
+                <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle language between Uzbek and Russian">
+                    <span data-uz="RU" data-ru="UZ">RU</span>
+                </button>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle between light and dark theme">
+                    <span class="theme-icon" aria-hidden="true">🌞</span>
+                    <span class="sr-only theme-text">Switch to dark mode</span>
+                </button>
+                <button class="mobile-menu" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span aria-hidden="true">☰</span>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="#home" class="nav-link" role="menuitem" data-uz="Bosh sahifa" data-ru="Главная">Bosh sahifa</a></li>
+                    <li role="none"><a href="#features" class="nav-link" role="menuitem" data-uz="Imkoniyatlar" data-ru="Возможности">Imkoniyatlar</a></li>
+                    <li role="none"><a href="#pricing" class="nav-link" role="menuitem" data-uz="Tariflar" data-ru="Тарифы">Tariflar</a></li>
+                    <li role="none"><a href="#about" class="nav-link" role="menuitem" data-uz="Biz haqimizda" data-ru="О нас">Biz haqimizda</a></li>
+                    <li role="none"><a href="#team" class="nav-link" role="menuitem" data-uz="Jamoa" data-ru="Команда">Jamoa</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero" role="banner">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-uz="Yosh avlodni raqamli chalg'ituvchilardan himoya qilamiz" data-ru="Мы защищаем молодое поколение от цифровых отвлекающих факторов">
+                        Yosh avlodni raqamli chalg'ituvchilardan himoya qilamiz
+                    </h1>
+                    <p class="hero-subtitle" data-uz="Tikoncha - bu o'quvchilar uchun maxsus ishlab chiqilgan raqamli himoya tizimi. Bizning platformamiz orqali bolalar diqqatini chalg'ituvchi ilovalar va saytlardan himoyalanadi." data-ru="Tikoncha - это система цифровой защиты, специально разработанная для учащихся. Наша платформа защищает детей от отвлекающих приложений и сайтов.">
+                        Tikoncha - bu o'quvchilar uchun maxsus ishlab chiqilgan raqamli himoya tizimi. Bizning platformamiz orqali bolalar diqqatini chalg'ituvchi ilovalar va saytlardan himoyalanadi.
+                    </p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#pricing" class="btn btn-primary cta-start" data-uz="Boshlash" data-ru="Начать">Boshlash</a>
+                        <a href="#features" class="btn btn-secondary cta-demo" data-uz="Demo ko'rish" data-ru="Смотреть демо">Demo ko'rish</a>
+                    </div>
+
+                    <img src="/images/tikoncha-main.svg" alt="Tikoncha hedgehog mascot representing digital protection for students" class="hero-mascot mascot-image" loading="eager">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title" data-uz="Imkoniyatlar" data-ru="Возможности">Imkoniyatlar</h2>
+                <p class="section-subtitle" data-uz="Tikoncha platformasining asosiy imkoniyatlari bilan tanishing" data-ru="Познакомьтесь с основными возможностями платформы Tikoncha">
+                    Tikoncha platformasining asosiy imkoniyatlari bilan tanishing
+                </p>
+                
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <img src="/images/tikoncha-main.svg" alt="Tikoncha mascot representing app blocking feature" class="feature-mascot mascot-image" loading="lazy">
+                        <h3 data-uz="Chalg'ituvchilarni bloklash" data-ru="Блокировка отвлекающих приложений">Chalg'ituvchilarni bloklash</h3>
+                        <p data-uz="Dars vaqtida ijtimoiy tarmoqlar va o'yinlarni avtomatik ravishda bloklaydi va o'quvchilarning diqqatini saqlaydi" data-ru="Автоматически блокирует социальные сети и игры во время уроков и сохраняет внимание учащихся">
+                            Dars vaqtida ijtimoiy tarmoqlar va o'yinlarni avtomatik ravishda bloklaydi va o'quvchilarning diqqatini saqlaydi
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <img src="/images/tikoncha-main.svg" alt="Tikoncha mascot representing focus enhancement feature" class="feature-mascot mascot-image" loading="lazy">
+                        <h3 data-uz="Diqqatni oshirish" data-ru="Повышение концентрации">Diqqatni oshirish</h3>
+                        <p data-uz="O'quvchilarning darsga e'tiborini jamlashga yordam beradi va ta'lim samaradorligini sezilarli darajada oshiradi" data-ru="Помогает учащимся сосредоточиться на уроке и значительно повышает эффективность обучения">
+                            O'quvchilarning darsga e'tiborini jamlashga yordam beradi va ta'lim samaradorligini sezilarli darajada oshiradi
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <img src="/images/tikoncha-main.svg" alt="Tikoncha mascot representing progress tracking feature" class="feature-mascot mascot-image" loading="lazy">
+                        <h3 data-uz="Rivojlanishni kuzatish" data-ru="Отслеживание развития">Rivojlanishni kuzatish</h3>
+                        <p data-uz="O'quvchilarning faoliyati va rivojlanishi haqida batafsil hisobotlar taqdim etadi va o'qituvchilarga yordam beradi" data-ru="Предоставляет подробные отчеты об активности и развитии учащихся и помогает учителям">
+                            O'quvchilarning faoliyati va rivojlanishi haqida batafsil hisobotlar taqdim etadi va o'qituvchilarga yordam beradi
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2 class="section-title" data-uz="Tariflar" data-ru="Тарифы">Tariflar</h2>
+                <p class="section-subtitle" data-uz="O'zingizga mos tarifni tanlang va bugun boshlang" data-ru="Выберите подходящий тариф и начните сегодня">
+                    O'zingizga mos tarifni tanlang va bugun boshlang
+                </p>
+                
+                <div class="pricing-grid">
+                    <article class="pricing-card">
+                        <h3 data-uz="Standart" data-ru="Стандарт">Standart</h3>
+                        <div class="price">
+                            $0
+                            <span class="price-period" data-uz="/oy" data-ru="/мес">/oy</span>
+                        </div>
+                        <ul class="features-list">
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="Asosiy bloklash funksiyasi" data-ru="Базовая функция блокировки">Asosiy bloklash funksiyasi</span>
+                            </li>
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="5 ta qurilma uchun" data-ru="Для 5 устройств">5 ta qurilma uchun</span>
+                            </li>
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="Asosiy hisobotlar" data-ru="Базовые отчеты">Asosiy hisobotlar</span>
+                            </li>
+                            <li class="not-included">
+                                <span class="check-icon" aria-hidden="true">✗</span>
+                                <span data-uz="Batafsil tahlillar" data-ru="Подробная аналитика">Batafsil tahlillar</span>
+                            </li>
+                            <li class="not-included">
+                                <span class="check-icon" aria-hidden="true">✗</span>
+                                <span data-uz="24/7 qo'llab-quvvatlash" data-ru="Поддержка 24/7">24/7 qo'llab-quvvatlash</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary" data-uz="Tanlash" data-ru="Выбрать">Tanlash</a>
+                    </article>
+
+                    <article class="pricing-card featured">
+                          <div class="badge" data-ru="Популярный" data-uz="Ommabop">Популярный</div>
+
+                        <h3 data-uz="Professional" data-ru="Профессиональный">Professional</h3>
+                        <div class="price">
+                            $9
+                            <span class="price-period" data-uz="/oy" data-ru="/мес">/oy</span>
+                        </div>
+                        <ul class="features-list">
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="Kengaytirilgan bloklash" data-ru="Расширенная блокировка">Kengaytirilgan bloklash</span>
+                            </li>
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="Cheksiz qurilmalar" data-ru="Неограниченные устройства">Cheksiz qurilmalar</span>
+                            </li>
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="Batafsil hisobotlar va tahlillar" data-ru="Подробные отчеты и аналитика">Batafsil hisobotlar va tahlillar</span>
+                            </li>
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="Shaxsiy sozlamalar" data-ru="Персональные настройки">Shaxsiy sozlamalar</span>
+                            </li>
+                            <li class="included">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                                <span data-uz="24/7 qo'llab-quvvatlash" data-ru="Поддержка 24/7">24/7 qo'llab-quvvatlash</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn btn-primary" data-uz="Tanlash" data-ru="Выбрать">Tanlash</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title" data-uz="Biz haqimizda" data-ru="О нас">Biz haqimizda</h2>
+                
+                <div class="about-grid">
+                    <article class="about-card">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <img src="/images/tikoncha-aboutus.svg" alt="Thoughtful Tikoncha hedgehog mascot representing our mission and values" class="about-mascot mascot-image" loading="lazy">
+                        </div>
+                        <h3 data-uz="Bizning maqsadimiz" data-ru="Наша цель">Bizning maqsadimiz</h3>
+                        <p data-uz="Biz zamonaviy ta'lim tizimida raqamli texnologiyalarning salbiy ta'sirini kamaytirish va o'quvchilarning diqqatini darsga qaratishga yordam berish maqsadida ishlaymiz. Tikoncha orqali biz har bir bolaning ta'lim olish huquqini himoya qilamiz va ularning kelajagini yaxshiroq qilishga harakat qilamiz." data-ru="Мы работаем с целью снижения негативного влияния ци��ровых технологий в современной системе образования и помощи учащимся сосредоточиться на уроках. Через Tikoncha мы защищаем право каждого ребенка на образование и стремимся сделать их будущее лучше.">
+                            Biz zamonaviy ta'lim tizimida raqamli texnologiyalarning salbiy ta'sirini kamaytirish va o'quvchilarning diqqatini darsga qaratishga yordam berish maqsadida ishlaymiz. Tikoncha orqali biz har bir bolaning ta'lim olish huquqini himoya qilamiz va ularning kelajagini yaxshiroq qilishga harakat qilamiz.
+                        </p>
+                    </article>
+
+                    <article class="about-card">
+                        <h3 data-uz="Biz kimmiz" data-ru="Кто мы">Biz kimmiz</h3>
+                        <p data-uz="Bizning jamoamiz tajribali pedagog, dasturchi va psixologlardan iborat. Biz bolalar psixologiyasi va zamonaviy texnologiyalar sohasidagi bilimlarimizni birlashtirib, eng samarali va xavfsiz yechimni yaratdik. Har birimiz ta'lim sohasida ko'p yillik tajribaga ega bo'lib, bolalarning raqamli muhitdagi xavfsizligini ta'minlashga bag'ishlanganmiz." data-ru="Наша команда состоит из опытных педагогов, программистов и психологов. Мы объединили наши знания в области детской психологии и современных технологий, чтобы создать наиболее эффективное и безопасное решение. Каждый из нас имеет многолетний опыт в сфере образования и посвящен обеспечению безопасности детей в цифровой среде.">
+                            Bizning jamoamiz tajribali pedagog, dasturchi va psixologlardan iborat. Biz bolalar psixologiyasi va zamonaviy texnologiyalar sohasidagi bilimlarimizni birlashtirib, eng samarali va xavfsiz yechimni yaratdik. Har birimiz ta'lim sohasida ko'p yillik tajribaga ega bo'lib, bolalarning raqamli muhitdagi xavfsizligini ta'minlashga bag'ishlanganmiz.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team">
+            <div class="container">
+                <h2 class="section-title" data-uz="Bizning jamoamiz" data-ru="Наша команда">Bizning jamoamiz</h2>
+                <p class="section-subtitle" data-uz="Tikoncha ortidagi professional jamoa bilan tanishing" data-ru="Познакомьтесь с профессиональной командой Tikoncha">
+                    Tikoncha ortidagi professional jamoa bilan tanishing
+                </p>
+                
+                <div class="team-grid">
+                    <article class="team-card">
+    <div class="team-avatar">
+        <img src="./images/tikoncha-main.svg" alt="Saidburxon Shuxratov" class="mascot-image" loading="lazy">
+    </div>
+    <h3>Saidburxon Shuxratov</h3>
+    <div class="team-role" data-uz="Bosh ijrochi direktor" data-ru="Генеральный директор">Bosh ijrochi direktor</div>
+    <p class="team-bio" data-uz="New edu loyihasi asoschisi va hozirgi kundagi rahbari." data-ru="Основатель проекта New Edu и его нынешний руководитель.">
+        New edu loyihasi asoschisi va hozirgi kundagi rahbari.
+    </p>
+</article>
+
+<article class="team-card">
+    <div class="team-avatar">
+        <img src="./images/tikoncha-main.svg" alt="Nurzodbek Nasriddinov" class="mascot-image" loading="lazy">
+    </div>
+    <h3>Nurzodbek Nasriddinov</h3>
+    <div class="team-role" data-uz="Loyiha boshqaruvchisi" data-ru="Руководитель проекта">Loyiha boshqaruvchisi</div>
+    <p class="team-bio" data-uz="Loyiha jarayonlarini boshqaradi, jamoa ishini muvofiqlashtiradi va belgilangan maqsadlarga erishishni ta'minlaydi." data-ru="Управляет проектными процессами и координирует команду для достижения целей.">
+        Loyiha jarayonlarini boshqaradi, jamoa ishini muvofiqlashtiradi va belgilangan maqsadlarga erishishni ta'minlaydi.
+    </p>
+</article>
+
+<article class="team-card">
+    <div class="team-avatar">
+        <img src="./images/tikoncha-main.svg" alt="Nurmuhammad Muhitdinov" class="mascot-image" loading="lazy">
+    </div>
+    <h3>Nurmuhammad Muhitdinov</h3>
+    <div class="team-role" data-uz="Texnik Bosh Maslahatchi" data-ru="Главный технический консультант">Texnik Bosh Maslahatchi</div>
+    <p class="team-bio" data-uz="Texnik yechimlar bo‘yicha strategik maslahatlar beradi. Loyihalar sifati va texnologik yo‘nalishini boshqarishda yetakchi rol o‘ynaydi." data-ru="Дает стратегические советы по техническим решениям и играет ключевую роль в управлении качеством проектов.">
+        Texnik yechimlar bo‘yicha strategik maslahatlar beradi. Loyihalar sifati va texnologik yo‘nalishini boshqarishda yetakchi rol o‘ynaydi.
+    </p>
+</article>
+
+<article class="team-card">
+    <div class="team-avatar">
+        <img src="./images/tikoncha-main.svg" alt="Azizbek Mo'minjonov" class="mascot-image" loading="lazy">
+    </div>
+    <h3>Azizbek Mo'minjonov</h3>
+    <div class="team-role" data-uz="Middle Android dasturchi" data-ru="Android разработчик (Middle)">Middle Android dasturchi</div>
+    <p class="team-bio" data-uz="Android ilovalarni ishlab chiqishda tajribaga ega. Foydalanuvchi tajribasi va samaradorlikka e’tibor qaratadi." data-ru="Имеет опыт в разработке Android-приложений. Сфокусирован на пользовательском опыте и эффективности.">
+        Android ilovalarni ishlab chiqishda tajribaga ega. Foydalanuvchi tajribasi va samaradorlikka e’tibor qaratadi.
+    </p>
+</article>
+
+<article class="team-card">
+    <div class="team-avatar">
+        <img src="./images/tikoncha-main.svg" alt="Ibrohimjon Odilov" class="mascot-image" loading="lazy">
+    </div>
+    <h3>Ibrohimjon Odilov</h3>
+    <div class="team-role" data-uz="Senior Android dasturchi" data-ru="Android разработчик (Senior)">Senior Android dasturchi</div>
+    <p class="team-bio" data-uz="Android ilovalarini ishlab chiqishda katta tajribaga ega. Yuqori sifatli va samarali yechimlar ishlab chiqishga ixtisoslashgan." data-ru="Обладает большим опытом разработки Android-приложений. Специализируется на качественных и эффективных решениях.">
+        Android ilovalarini ishlab chiqishda katta tajribaga ega. Yuqori sifatli va samarali yechimlar ishlab chiqishga ixtisoslashgan.
+    </p>
+</article>
+
+<article class="team-card">
+    <div class="team-avatar">
+        <img src="./images/tikoncha-main.svg" alt="Abdurahim Sharipov" class="mascot-image" loading="lazy">
+    </div>
+    <h3>Abdurahim Sharipov</h3>
+    <div class="team-role" data-uz="Junior Android dasturchi" data-ru="Android разработчик (Junior)">Junior Android dasturchi</div>
+    <p class="team-bio" data-uz="Android ilovalarini ishlab chiqishda dastlabki tajribaga ega. Katta jamoa bilan ishlash va yangi texnologiyalarni o‘rganishga intiladi." data-ru="Имеет начальный опыт в разработке Android-приложений. Стремится работать в команде и изучать новые технологии.">
+        Android ilovalarini ishlab chiqishda dastlabki tajribaga ega. Katta jamoa bilan ishlash va yangi texnologiyalarni o‘rganishga intiladi.
+    </p>
+</article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-uz="Aloqa" data-ru="Контакты">Aloqa</h4>
+                    <a href="https://t.me/newedu_uz" aria-label="Email us at info@tikoncha.uz">https://t.me/newedu_uz</a>
+                    <address data-uz="Toshkent, O'zbekiston" data-ru="Ташкент, Узбекистан">Toshkent, O'zbekiston</address>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-uz="Mahsulot" data-ru="Продукт">Mahsulot</h4>
+                    <a href="#features" data-uz="Imkoniyatlar" data-ru="Возможности">Imkoniyatlar</a>
+                    <a href="#pricing" data-uz="Tariflar" data-ru="Тарифы">Tariflar</a>
+                    <a href="#" data-uz="Qo'llab-quvvatlash" data-ru="Поддержка">Qo'llab-quvvatlash</a>
+                    <a href="#" data-uz="API hujjatlari" data-ru="API документация">API hujjatlari</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-uz="Kompaniya" data-ru="Компания">Kompaniya</h4>
+                    <a href="#about" data-uz="Biz haqimizda" data-ru="О нас">Biz haqimizda</a>
+                    <a href="#team" data-uz="Jamoa" data-ru="Команда">Jamoa</a>
+                    <a href="#" data-uz="Karyera" data-ru="Карьера">Karyera</a>
+                    <a href="#" data-uz="Yangiliklar" data-ru="Новости">Yangiliklar</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-uz="Huquqiy" data-ru="Правовая информация">Huquqiy</h4>
+                    <a href="./privacy/privacy.html" data-uz="Maxfiylik siyosati" data-ru="Политика конфиденциальности">Maxfiylik siyosati</a>
+                    <a href="./terms/terms.html" data-uz="Foydalanish shartlari" data-ru="Условия использования">Foydalanish shartlari</a>
+                    
+                    <div class="social-links">
+                        <a href="#" title="Telegram" aria-label="Follow us on Telegram">📱</a>
+                        <a href="#" title="Instagram" aria-label="Follow us on Instagram">📷</a>
+                        <a href="#" title="Facebook" aria-label="Follow us on Facebook">📘</a>
+                        <a href="#" title="LinkedIn" aria-label="Follow us on LinkedIn">💼</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tikoncha. <span data-uz="Barcha huquqlar himoyalangan." data-ru="Все права защищены.">Barcha huquqlar himoyalangan.</span></p>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+</html>
