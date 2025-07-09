@@ -384,7 +384,24 @@
             flex-wrap: wrap;
             margin-bottom: 3rem;
         }
+        @media (max-width: 400px) {
+  .header-controls {
+    gap: 0.25rem;
+  }
 
+  .header-controls button {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  .header-controls .lang-toggle span,
+  .header-controls .theme-toggle .theme-icon {
+    font-size: 1rem;
+  }
+}
+        
         .btn {
             padding: 1rem 2rem;
             border-radius: 12px;
@@ -585,19 +602,19 @@
             transform: scale(1.05);
             background: linear-gradient(135deg, var(--bg-card) 0%, var(--accent-tertiary) 100%);
         }
+        .badge {
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.5rem 3rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transform: rotate(45deg);
+    z-index: 1;
+}
 
-        .pricing-card.featured::before {
-            content: 'Популярный';
-            position: absolute;
-            top: 1rem;
-            right: -2rem;
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.5rem 3rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transform: rotate(45deg);
-        }
 
         .pricing-card:hover {
             transform: translateY(-5px);
@@ -1323,6 +1340,8 @@
                     </article>
 
                     <article class="pricing-card featured">
+                          <div class="badge" data-ru="Популярный" data-uz="Ommabop">Популярный</div>
+
                         <h3 data-uz="Professional" data-ru="Профессиональный">Professional</h3>
                         <div class="price">
                             $9
@@ -1392,48 +1411,71 @@
                 
                 <div class="team-grid">
                     <article class="team-card">
-                        <div class="team-avatar">
-                            <img src="/images/tikoncha-team.png" alt="Tikoncha team mascot representing Saidbuxron Shuxratov" class="mascot-image" loading="lazy">
-                        </div>
-                        <h3>Saidbuxron Shuxratov</h3>
-                        <div class="team-role" data-uz="Bosh ijrochi direktor" data-ru="Генеральный директор">Bosh ijrochi direktor</div>
-                        <p class="team-bio" data-uz="10 yillik ta'lim sohasidagi tajriba. MIT da o'qigan va bir nechta EdTech loyihalarini muvaffaqiyatli boshqargan. Bolalar ta'limi va texnologiya integratsiyasi bo'yicha ekspert." data-ru="10-летний опыт в сфере образования. Выпускник MIT, успешно руководил несколькими EdTech проектами. Эксперт по детскому образованию и интеграции технологий.">
-                            10 yillik ta'lim sohasidagi tajriba. MIT da o'qigan va bir nechta EdTech loyihalarini muvaffaqiyatli boshqargan. Bolalar ta'limi va texnologiya integratsiyasi bo'yicha ekspert.
-                        </p>
-                    </article>
+    <div class="team-avatar">
+        <img src="./images/tikoncha-main.svg" alt="Saidburxon Shuxratov" class="mascot-image" loading="lazy">
+    </div>
+    <h3>Saidburxon Shuxratov</h3>
+    <div class="team-role" data-uz="Bosh ijrochi direktor" data-ru="Генеральный директор">Bosh ijrochi direktor</div>
+    <p class="team-bio" data-uz="New edu loyihasi asoschisi va hozirgi kundagi rahbari." data-ru="Основатель проекта New Edu и его нынешний руководитель.">
+        New edu loyihasi asoschisi va hozirgi kundagi rahbari.
+    </p>
+</article>
 
-                    <article class="team-card">
-                        <div class="team-avatar">
-                            <img src="/images/tikoncha-team.png" alt="Tikoncha team mascot representing Muhammadsaid Masaitov" class="mascot-image" loading="lazy">
-                        </div>
-                        <h3>Muhammadsaid Masaitov</h3>
-                        <div class="team-role" data-uz="UI/UX dizayner" data-ru="UI/UX дизайнер">UI/UX dizayner</div>
-                        <p class="team-bio" data-uz="Bolalar uchun foydalanuvchi interfeyslari yaratish bo'yicha mutaxassis. 7 yillik dizayn tajribasi va bir nechta xalqaro mukofotlar sohibi. Foydalanuvchi tajribasi va dostona dizayn bo'yicha ekspert." data-ru="Специалист по созданию пользовательских интерфейсов для детей. 7-летний опыт в дизайне и обладатель нескольких международных наград. Эксперт по пользовательскому опыту и дружелюбному дизайну.">
-                            Bolalar uchun foydalanuvchi interfeyslari yaratish bo'yicha mutaxassis. 7 yillik dizayn tajribasi va bir nechta xalqaro mukofotlar sohibi. Foydalanuvchi tajribasi va dostona dizayn bo'yicha ekspert.
-                        </p>
-                    </article>
+<article class="team-card">
+    <div class="team-avatar">
+        <img src="./images/tikoncha-main.svg" alt="Nurzodbek Nasriddinov" class="mascot-image" loading="lazy">
+    </div>
+    <h3>Nurzodbek Nasriddinov</h3>
+    <div class="team-role" data-uz="Loyiha boshqaruvchisi" data-ru="Руководитель проекта">Loyiha boshqaruvchisi</div>
+    <p class="team-bio" data-uz="Loyiha jarayonlarini boshqaradi, jamoa ishini muvofiqlashtiradi va belgilangan maqsadlarga erishishni ta'minlaydi." data-ru="Управляет проектными процессами и координирует команду для достижения целей.">
+        Loyiha jarayonlarini boshqaradi, jamoa ishini muvofiqlashtiradi va belgilangan maqsadlarga erishishni ta'minlaydi.
+    </p>
+</article>
 
-                    <article class="team-card">
-                        <div class="team-avatar">
-                            <img src="/images/tikoncha-team.png" alt="Tikoncha team mascot representing Dilshoda Karimova" class="mascot-image" loading="lazy">
-                        </div>
-                        <h3>Dilshoda Karimova</h3>
-                        <div class="team-role" data-uz="Bolalar psixologi" data-ru="Детский психолог">Bolalar psixologi</div>
-                        <p class="team-bio" data-uz="Bolalar psixologiyasi bo'yicha PhD. Raqamli texnologiyalarning bolalar rivojlanishiga ta'siri bo'yicha tadqiqotchi. Bolalar xavfsizligi va raqamli salomatlik bo'yicha maslahatchi." data-ru="PhD в области детской психологии. Исследователь влияния цифровых технологий на развитие детей. Консультант по детской безопасности и цифровому здоровью.">
-                            Bolalar psixologiyasi bo'yicha PhD. Raqamli texnologiyalarning bolalar rivojlanishiga ta'siri bo'yicha tadqiqotchi. Bolalar xavfsizligi va raqamli salomatlik bo'yicha maslahatchi.
-                        </p>
-                    </article>
+<article class="team-card">
+    <div class="team-avatar">
+        <img src="./images/tikoncha-main.svg" alt="Nurmuhammad Muhitdinov" class="mascot-image" loading="lazy">
+    </div>
+    <h3>Nurmuhammad Muhitdinov</h3>
+    <div class="team-role" data-uz="Texnik Bosh Maslahatchi" data-ru="Главный технический консультант">Texnik Bosh Maslahatchi</div>
+    <p class="team-bio" data-uz="Texnik yechimlar bo‘yicha strategik maslahatlar beradi. Loyihalar sifati va texnologik yo‘nalishini boshqarishda yetakchi rol o‘ynaydi." data-ru="Дает стратегические советы по техническим решениям и играет ключевую роль в управлении качеством проектов.">
+        Texnik yechimlar bo‘yicha strategik maslahatlar beradi. Loyihalar sifati va texnologik yo‘nalishini boshqarishda yetakchi rol o‘ynaydi.
+    </p>
+</article>
 
-                    <article class="team-card">
-                        <div class="team-avatar">
-                            <img src="/images/tikoncha-team.png" alt="Tikoncha team mascot representing Aziz Rahmonov" class="mascot-image" loading="lazy">
-                        </div>
-                        <h3>Aziz Rahmonov</h3>
-                        <div class="team-role" data-uz="Bosh dasturchi" data-ru="Главный разработчик">Bosh dasturchi</div>
-                        <p class="team-bio" data-uz="Full-stack dasturchi, xavfsizlik tizimlari bo'yicha mutaxassis. Google va Microsoft kompaniyalarida ishlagan tajribaga ega. Kiberxavfsizlik va ma'lumotlar himoyasi bo'yicha ekspert." data-ru="Full-stack разработчик, специалист по системам безопасности. Имеет опыт работы в Google и Microsoft. Эксперт по кибербезопасности и защите данных.">
-                            Full-stack dasturchi, xav fsizlik tizimlari bo'yicha mutaxassis. Google va Microsoft kompaniyalarida ishlagan tajribaga ega. Kiberxavfsizlik va ma'lumotlar himoyasi bo'yicha ekspert.
-                        </p>
-                    </article>
+<article class="team-card">
+    <div class="team-avatar">
+        <img src="./images/tikoncha-main.svg" alt="Azizbek Mo'minjonov" class="mascot-image" loading="lazy">
+    </div>
+    <h3>Azizbek Mo'minjonov</h3>
+    <div class="team-role" data-uz="Middle Android dasturchi" data-ru="Android разработчик (Middle)">Middle Android dasturchi</div>
+    <p class="team-bio" data-uz="Android ilovalarni ishlab chiqishda tajribaga ega. Foydalanuvchi tajribasi va samaradorlikka e’tibor qaratadi." data-ru="Имеет опыт в разработке Android-приложений. Сфокусирован на пользовательском опыте и эффективности.">
+        Android ilovalarni ishlab chiqishda tajribaga ega. Foydalanuvchi tajribasi va samaradorlikka e’tibor qaratadi.
+    </p>
+</article>
+
+<article class="team-card">
+    <div class="team-avatar">
+        <img src="./images/tikoncha-main.svg" alt="Ibrohimjon Odilov" class="mascot-image" loading="lazy">
+    </div>
+    <h3>Ibrohimjon Odilov</h3>
+    <div class="team-role" data-uz="Senior Android dasturchi" data-ru="Android разработчик (Senior)">Senior Android dasturchi</div>
+    <p class="team-bio" data-uz="Android ilovalarini ishlab chiqishda katta tajribaga ega. Yuqori sifatli va samarali yechimlar ishlab chiqishga ixtisoslashgan." data-ru="Обладает большим опытом разработки Android-приложений. Специализируется на качественных и эффективных решениях.">
+        Android ilovalarini ishlab chiqishda katta tajribaga ega. Yuqori sifatli va samarali yechimlar ishlab chiqishga ixtisoslashgan.
+    </p>
+</article>
+
+<article class="team-card">
+    <div class="team-avatar">
+        <img src="./images/tikoncha-main.svg" alt="Abdurahim Sharipov" class="mascot-image" loading="lazy">
+    </div>
+    <h3>Abdurahim Sharipov</h3>
+    <div class="team-role" data-uz="Junior Android dasturchi" data-ru="Android разработчик (Junior)">Junior Android dasturchi</div>
+    <p class="team-bio" data-uz="Android ilovalarini ishlab chiqishda dastlabki tajribaga ega. Katta jamoa bilan ishlash va yangi texnologiyalarni o‘rganishga intiladi." data-ru="Имеет начальный опыт в разработке Android-приложений. Стремится работать в команде и изучать новые технологии.">
+        Android ilovalarini ishlab chiqishda dastlabki tajribaga ega. Katta jamoa bilan ishlash va yangi texnologiyalarni o‘rganishga intiladi.
+    </p>
+</article>
+
                 </div>
             </div>
         </section>
